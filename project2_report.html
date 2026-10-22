@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+    <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Project 2 Report</title>
+        <style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            /* Headings */
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1,
+            h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+            }
+
+            h3 {
+                font-size: 130%;
+            }
+
+            /* Lists */
+
+            ul,
+            ol {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                &::marker {
+                    color: var(--color-neutral-40);
+                }
+
+                + li {
+                    margin-top: 0.2em;
+                }
+            }
+
+            /* Sectioning elements */
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem;
+            }
+
+            /* Figures */
+
+            figure {
+                margin: 1em 0;
+                padding: 0.5rem;
+                margin-inline: -0.5em;
+                border: 1px solid var(--color-neutral-80);
+                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+                text-align: center;
+                background: white;
+
+                > figcaption {
+                    font: 500 75% var(--font-sans);
+                    background: var(--color-neutral-95);
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    margin-top: 0.5rem;
+                    counter-increment: figure;
+                    text-align: left;
+
+                    &::before {
+                        content: "Figure " counter(figure) ": ";
+                        font-weight: bold;
+                        color: var(--color-neutral-40);
+                    }
+
+                    a:not(:hover, :focus, :active) {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: color-mix(
+                            in lab,
+                            currentColor,
+                            transparent 70%
+                        );
+                    }
+                }
+            }
+        </style>
+    <style>
+html {max-width: 1180px; padding: 0 20px; font-size: 17px;}
+body {margin: 0;} header {padding: 2rem 0 1rem;}
+h1 {font-size: clamp(2rem, 5vw, 3.3rem);}
+main {padding: 1.5rem 2.5rem 2.5rem;} section {margin-block: 2.5rem;}
+h2 {font-size: 1.6rem;} h3 {font-size: 1.25rem;}
+img {display:block; width:100%; height:auto;}
+figure > figcaption {font: 400 .9rem/1.55 system-ui;}
+li + li {margin-top: 1rem;} li {line-height:1.65;}
+.score {white-space:nowrap; font-weight:600;}
+.context {color:#495363; font-size:.95rem;} a {color:#234f96;}
+@media(max-width:640px) {html {padding:0 10px;font-size:16px;} main {padding:1rem;} ul {padding-left:1.2rem;} h2 {font-size:1.35rem;}}
+@media print {html {max-width:none;background:white;} main {padding:0;} figure, li {break-inside:avoid;} header {padding:0;}}
+</style></head>
+
+    <body>
+<header><h1><small>Project 2</small>Persuasive or Deceptive Visualization?</h1>
+<p><strong>Young Suh</strong> — <em>y2suh@ucsd.edu</em></p></header>
+<main>
+<h2>Proposition: Occurrence-based abortion rates are not reliable for comparing abortion incidence among state residents.</h2>
+<p class="context">Both visualizations use state-level abortion rates for 2020 from the Guttmacher Institute. Occurrence-based rates count abortions by where care occurs; residence-based rates count abortions by where patients live. Rates are expressed per 1,000 women ages 15–44. The absolute gap is |occurrence-based rate − residence-based rate|.</p>
+<p class="context">Source: <a href="https://www.guttmacher.org/">Guttmacher Institute</a>, Abortion Data by U.S. State; 2020 occurrence and residence rate columns. Dataset listed in the <a href="https://dsc-courses.github.io/dsc209r-2026-fa/projects/project2/">Project 2 assignment</a>.</p>
+<p class="context">Design decisions are self-assessed from −2 (fully deceptive) to +2 (fully earnest). These scores describe individual choices, rather than the visualization as a whole.</p>
+<section aria-labelledby="for-heading">
+<h2 id="for-heading">For the proposition</h2>
+<figure><img src="images/01_rate_gaps.png" alt="Dumbbell chart comparing occurrence and residence abortion rates for the ten states with the largest absolute gaps; Missouri has rates of 0.1 and 9.9 per 1,000 women ages 15–44."><figcaption>The ten states with the largest absolute gaps show how the location of care can give a different picture from the location of patients’ residences. Missouri’s rates differ by 9.8 abortions per 1,000 women ages 15–44.</figcaption></figure>
+<h3>Design decisions and rationale</h3>
+<ul>
+<li><strong>Connected dots on a shared numerical axis.</strong> <span class="score">Score: +2.</span> I initially tried grouped bars with states on the x-axis and rates on the y-axis, but the differences were not immediately clear to me. I also tried connecting the values with sloped lines and using stacked bars; neither made the comparison as intuitive as I wanted. I chose a horizontal dumbbell plot because each dot shows an original rate and the connecting line makes the absolute gap visible. This supports direct comparison without adding the two rates together, although most exact values still require estimation from the axis.</li>
+<li><strong>Selecting and ordering the ten largest absolute gaps.</strong> <span class="score">Score: −1.5.</span> I calculated absolute differences, selected the ten largest, and placed the largest discrepancy first. This concentrates attention on the strongest examples supporting the proposition, but excludes the forty states with smaller gaps and may make large discrepancies seem more widespread. Showing all fifty states would provide broader context, while the selected view makes individual differences easier to inspect. The subtitle discloses the selection, which limits but does not eliminate the potentially misleading impression.</li>
+<li><strong>Adding numerical labels to Missouri.</strong> <span class="score">Score: −0.5.</span> I added labels to the state with the largest gap so readers can immediately compare 0.1 with 9.9. This is accurate and makes one example concrete, but selectively annotating the most extreme case gives it additional persuasive weight. Labeling every state would provide equal numerical detail at the cost of more clutter; labeling only Missouri keeps the chart focused while leaving other values less precise to read.</li>
+<li><strong>Defining the two measures with distinct colors and a legend.</strong> <span class="score">Score: +2.</span> Orange consistently identifies occurrence-based rates and blue identifies residence-based rates, while the legend explains their meanings in plain language. This lets readers see that occurrence-based rates can be either higher or lower than residence-based rates, rather than suggesting a single direction of error. A monochrome display would make the two endpoints harder to distinguish. The title frames these differences as an issue of interpretation, while the legend preserves the distinction between the measures.</li>
+</ul>
+</section>
+<section aria-labelledby="against-heading">
+<h2 id="against-heading">Against the proposition</h2>
+<figure><img src="images/04_gap_distribution.png" alt="Bar chart of absolute rate gaps across 50 states: 25 at or below 1, 9 above 1 through 2, 11 above 2 through 5, and 5 above 5."><figcaption>Across all fifty states, 34 (68%) have an absolute gap of no more than 2 abortions per 1,000 women ages 15–44. This view emphasizes the frequency of smaller gaps rather than the magnitude of the largest discrepancies.</figcaption></figure>
+<h3>Design decisions and rationale</h3>
+<ul>
+<li><strong>Replacing whole-number bins with four broader categories.</strong> <span class="score">Score: −1.</span> I first examined differences using whole-number bins and noticed a strongly right-skewed distribution: many states had smaller gaps, while a few had much larger gaps. I then used the categories ≤1, &gt;1 to 2, &gt;2 to 5, and &gt;5 to simplify the display and reduce the visual impact of the largest differences. The final category retains those states in the count but conceals their individual gap sizes. These are categorical bars showing counts, not a continuous histogram whose widths represent interval sizes; narrower bins would reveal more detail about the tail.</li>
+<li><strong>Emphasizing “34 of 50” and the threshold of 2 in the title.</strong> <span class="score">Score: −1.</span> The title combines the first two categories into a majority-based argument that occurrence-based rates approximate residence-based rates in many states. The count is accurate, but the threshold of 2 is a presentation choice rather than an established standard for a negligible difference. A neutral distribution title would leave more interpretation to the reader; this title directs readers toward similarity. Its limitation is that a small absolute gap can still be substantial relative to a state’s rate.</li>
+<li><strong>Using blue for smaller gaps and muted gray for larger gaps.</strong> <span class="score">Score: −0.5.</span> The first two bars receive blue colors, while the larger-gap categories are gray. This reinforces the title by drawing attention to the categories that support the opposing stance and reducing the emphasis on exceptions. Using one color for all bars would give the categories more equal visual treatment. The counts remain readable, but the color hierarchy helps determine which part of the distribution readers notice first.</li>
+<li><strong>Including all fifty states, exact counts, and a zero baseline.</strong> <span class="score">Score: +2.</span> All states remain represented, and the labels 25, 9, 11, and 5 allow readers to verify the distribution and the title’s total. The zero baseline makes bar heights proportional to counts, while the footnote explains that states count equally and that the categories are not significance thresholds. A population-weighted analysis would answer a different question about how many women are represented. This chart accurately describes the distribution across states, but cannot establish the population-level impact or prove that the two measures are interchangeable.</li>
+</ul>
+</section>
+<section aria-labelledby="reflection-heading">
+<h2 id="reflection-heading">Final reflection</h2>
+<p>The main challenge was finding representations that made each argument easy to understand. For the first visualization, I tried grouped bars, sloped connections, and stacked bars before settling on connected dots. The earlier designs let me explore the rates, but the final dumbbell plot made their differences more immediately visible. Adding Missouri’s labels made the strongest example concrete. For the second visualization, the initial whole-number bins helped me recognize the right-skewed distribution. Broader categories then made the majority of smaller gaps easier to summarize, while reducing the detail shown for the largest gaps.</p>
+<p>The contrast between the final plots shows how much a message can change without changing the underlying rates. Selecting the largest gaps makes disagreement prominent, while counting states within broader categories makes similarity prominent. Both statements can be numerically correct, but neither alone settles whether occurrence-based rates are reliable for comparing residents. That judgment depends on the comparison being made and how much difference is acceptable. An absolute gap of 2 does not have the same relative meaning in every state, and giving each state equal weight does not describe how many women are affected.</p>
+<p>I define ethical analysis and visualization as communicating accurate values while providing enough context for readers to understand the scope and limitations of the claim. Selection, grouping, color, and titles can support a clear argument, but they become misleading when they encourage conclusions that the displayed evidence cannot justify. In the first plot, the main risk is generalizing from the ten most extreme states to the whole country. In the second, the risk is treating a chosen cutoff as proof that discrepancies are unimportant. Disclosing the selection and the category choices helps readers evaluate those claims, although disclosure alone does not remove the persuasive effect of what is emphasized.</p>
+</section>
+</main></body></html>
