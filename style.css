@@ -104,6 +104,18 @@ form {
   margin: 0;
 }
 
+.projects article p {
+  margin: 0;
+}
+
+.project-year {
+  margin-top: 0.75em;
+  font-family: Baskerville, "Baskerville Old Face", Palatino, "Palatino Linotype", serif;
+  font-style: italic;
+  font-variant-numeric: oldstyle-nums;
+  color: color-mix(in oklch, canvastext 55%, canvas);
+}
+
 h1 {
   font-size: 400%;
 }
@@ -170,4 +182,60 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   color: oklch(45% 0 0);
   font-size: 1.5em;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+  &:has(path:hover) {
+    path:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+  path {
+    transition: 300ms;
+    cursor: pointer;
+  }
+}
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+
+.container {
+
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7em, 1fr));
+  gap: 1em;
+  border: 1px solid oklch(80% 3% 200);
+  padding: 1em;
+  margin-block: 1em;
+  flex:1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  flex:1;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  aspect-ratio: 1 / 1;
+  background: var(--color);
+  border-radius: 0.15em;
 }
