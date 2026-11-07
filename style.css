@@ -239,3 +239,103 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color);
   border-radius: 0.15em;
 }
+
+dl.stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5em;
+}
+
+dl.stats dt {
+  grid-row: 1;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1em;
+  color: oklch(45% 0 0);
+}
+
+dl.stats dd {
+  grid-row: 2;
+  margin: 0;
+  color: oklch(45% 0 0);
+  font-size: 1.5em;
+}
+
+.gridlines line {
+  stroke: currentColor;
+  stroke-opacity: 0.15;
+}
+
+.gridlines path {
+  display: none;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2em 1em;
+  margin: 0;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt,
+dl.info dd {
+  margin: 0;
+}
+
+dl.info dt {
+  color: oklch(45% 0 0);
+  font-weight: normal;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  z-index: 10;
+  max-width: 28em;
+  padding: 0.75em 1em;
+  background-color: light-dark(rgba(255, 255, 255, 0.92), rgba(32, 32, 32, 0.92));
+  border-radius: 0.4em;
+  box-shadow: 0 0.4em 1em oklch(0% 0 0 / 18%);
+  backdrop-filter: blur(6px);
+}
+
+#language-breakdown {
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  margin-top: 0.5em;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
