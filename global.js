@@ -124,7 +124,7 @@ export function renderProjects(projects, containerElement, headingLevel = "h2") 
     ? project.image
     : BASE_PATH + project.image;
 
-    article.innerHTML = `
+    const content = `
       <${headingLevel}>${project.title}</${headingLevel}>
       <img src="${image}" alt="${project.title}">
       <div>
@@ -132,6 +132,10 @@ export function renderProjects(projects, containerElement, headingLevel = "h2") 
         ${project.year ? `<p class="project-year">c. ${project.year}</p>` : ""}
       </div>
     `;
+
+    article.innerHTML = project.url
+      ? `<a href="${project.url}" target="_blank" rel="noopener">${content}</a>`
+      : content;
     containerElement.append(article);
   }
 }
