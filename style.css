@@ -98,6 +98,15 @@ form {
   grid-template-rows: subgrid;
   grid-row: span 3;
   gap: 1em;
+  min-width: 0;
+}
+
+.projects article img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
 }
 
 .projects h2 {
