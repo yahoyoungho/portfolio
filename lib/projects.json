@@ -1,17 +1,17 @@
 [
     {
-        "title": "Persuasive or Deceptive Visualization?",
-        "year": 2026,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "url": "../project2_report.html",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fugit culpa pariatur! Laudantium delectus enim eius, quos amet, totam reprehenderit nobis aperiam voluptas exercitationem cupiditate tempora minus ad necessitatibus quas."
-    },
-    {
         "title": "Bike Watching",
         "year": 2026,
         "image": "images/bikewatching.png",
         "url": "https://yahoyoungho.github.io/bikewatching/",
         "description": "Data Visualization Project for DSC 209 at UCSD for analyzing bike data in Boston and Cambridge."
+    },
+    {
+        "title": "Persuasive or Deceptive Visualization?",
+        "year": 2026,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "url": "../project2_report.html",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fugit culpa pariatur! Laudantium delectus enim eius, quos amet, totam reprehenderit nobis aperiam voluptas exercitationem cupiditate tempora minus ad necessitatibus quas."
     },
     {
         "title": "Nobis, error. Eaque, deleniti.",
