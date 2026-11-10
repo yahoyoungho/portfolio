@@ -7,10 +7,11 @@
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fugit culpa pariatur! Laudantium delectus enim eius, quos amet, totam reprehenderit nobis aperiam voluptas exercitationem cupiditate tempora minus ad necessitatibus quas."
     },
     {
-        "title": "Nulla blanditiis veritatis nam.",
+        "title": "Bike Watching",
         "year": 2026,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Molestiae aspernatur quidem eaque accusamus necessitatibus, cumque pariatur, assumenda ullam doloremque fugit fuga ut odit expedita! Totam quaerat quod aperiam, dolores nostrum consequuntur vitae temporibus, pariatur, porro nisi alias harum?"
+        "image": "images/bikewatching.png",
+        "url": "https://yahoyoungho.github.io/bikewatching/",
+        "description": "Data Visualization Project for DSC 209 at UCSD for analyzing bike data in Boston and Cambridge."
     },
     {
         "title": "Nobis, error. Eaque, deleniti.",
